@@ -5,16 +5,17 @@ terraform {
     }
   }
 }
-resource "aws_instance" "" {
-  ami           = var.ami
-  instance_type = var.instance_type
+# Define the AWS provider
+provider "aws" {
+  region = "ap-south-1" # Replace with your desired AWS region
+}
 
-  network_interface {
-    network_interface_id = var.network_interface_id
-    device_index         = 0
-  }
-
-  credit_specification {
-    cpu_credits = "unlimited"
+# Create an EC2 instance
+resource "aws_instance" "example" {
+  ami           = "ami-02b49a24cfb95941c" # Replace with the desired AMI ID
+  instance_type = "t2.micro"             # Replace with the desired instance type
+  key_name      = "VM_Windows"   # Replace with your SSH key pair name
+  tags = {
+    Name = "First-instance"
   }
 }
