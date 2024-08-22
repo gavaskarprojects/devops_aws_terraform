@@ -8,6 +8,8 @@ terraform {
 # Define the AWS provider
 provider "aws" {
   region = "ap-south-1" # Replace with your desired AWS region
+access_key = "AKIA45WED53VYMP2777K"
+secret_key = "Ar+VuNZTpAeIZZGgjaeTDmTuYybZma9eQV8PF5O0"
 }
 
 # Create an EC2 instance
