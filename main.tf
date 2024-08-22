@@ -1,10 +1,3 @@
-terraform {
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-    }
-  }
-}
 # Define the AWS provider
 provider "aws" {
   region = "ap-south-1" # Replace with your desired AWS region
